@@ -1,9 +1,10 @@
-import CategoryMenu from './components/category-menu/category-menu.components';
+import { Outlet } from 'react-router-dom';
+import CategoryMenu from '../../components/category-menu/category-menu.components';
 
 
 
 
-const App =()=> {
+const Home =()=> {
 
   const categories =[
     {
@@ -34,10 +35,14 @@ const App =()=> {
   ]
 
   return (
-     
-    <CategoryMenu categories = {categories}/>
+     <div>
+        <CategoryMenu categories = {categories}/>
+        <Outlet />
+
+     </div>
+   
 
   );
 }
 
-export default App;
+export default Home;
