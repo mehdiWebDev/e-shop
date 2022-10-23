@@ -9,6 +9,8 @@ import FormInput from '../form-input/form-input.component';
 import "./sign-in-form.styles.scss";
 import Button from '../button/Button.component';
 
+
+
 const defaultFormFields = {
     email: "",
     password: "",
@@ -18,10 +20,8 @@ const defaultFormFields = {
 const SingIn = () => {
 
     const [formFields, setFormFields] = useState(defaultFormFields);
-
     const { email, password } = formFields;
-
-
+   
     const resetFormFields = () => {
         setFormFields(defaultFormFields)
     }
@@ -34,8 +34,6 @@ const SingIn = () => {
     const signInWithGoogle = async () => {
 
         const { user } = await signInWithGooglePopup();
-        await creatUserDocumentFromAuth(user);
-
 
     }
 
@@ -46,21 +44,20 @@ const SingIn = () => {
 
         try {
 
-            const response = await signInAuthUserWithEmailAndPassword(email,password)
-
-            console.log(response);
-
+            const {user} = await signInAuthUserWithEmailAndPassword(email, password)
+            
+           
             resetFormFields();
 
         } catch (e) {
 
 
-            switch(e.code){
+            switch (e.code) {
                 case "auth/wrong-password": alert("incorrect password form email");
                     break;
                 case "auth/user-not-found": alert("no user associated with this email");
                     break;
-                default:console.log(e)    
+                default: console.log(e)
             }
 
         }
@@ -93,9 +90,8 @@ const SingIn = () => {
 
 
                 <div className='buttons-container'>
-                <Button type="submit"> Sign in </Button>
-                <Button type="button" buttonType="google" onClick={signInWithGoogle}>google Sign in</Button>
-
+                    <Button type="submit"> Sign in </Button>
+                    <Button type="button" buttonType="google" onClick={signInWithGoogle}>google Sign in</Button>
                 </div>
 
 
