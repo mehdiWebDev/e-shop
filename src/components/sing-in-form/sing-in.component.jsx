@@ -4,7 +4,7 @@ import {
     signInWithGooglePopup,
     signInAuthUserWithEmailAndPassword
 } from '../../utils/firebase/firebase.utils';
-import FormInput from '../form-input/form-input.component';
+import FormInput from '../form-input/form-input.component.jsx';
 import "./sign-in-form.styles.scss";
 import Button, {buttonTypeClasses} from '../button/Button.component';
 
