@@ -1,5 +1,5 @@
-import {React,useContext,useState} from 'react';
-import {CategoriesContext} from '../../contexts/categories.context';
+import {React,useContext} from 'react';
+
 import './product-card.styles.scss';
 import Button,{buttonTypeClasses} from '../button/Button.component';
 
@@ -13,7 +13,7 @@ const ProductCard = ({product}) => {
     const addProductToCart = () => addItemTocart(product)
   
     const {name,price,imageUrl}= product;
-    const cards = useContext(CategoriesContext)
+  
     return (
         <div className='product-card-container' >
 
