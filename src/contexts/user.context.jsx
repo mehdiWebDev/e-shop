@@ -23,7 +23,7 @@ export const UserProvider =({children})=>{
             creatUserDocumentFromAuth(user);
         }
           setCurrentUser(user);
-          console.log(user)
+         
       })
 
 

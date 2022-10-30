@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { createAuthUserWithEmailAndPassword, creatUserDocumentFromAuth } from '../../utils/firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
 import "./sign-up-form.styles.scss";
-import Button from '../button/Button.component';
+import Button, {buttonTypeClasses} from '../button/Button.component';
 
 const defaultFormFields = {
     displayName: "",
@@ -90,7 +90,7 @@ const SingUp = () => {
 
              
 
-                <Button type="submit" buttonType="google-sign-in"> Sign up </Button>
+                <Button type="submit" buttonType={buttonTypeClasses.base}> Sign up </Button>
 
             </form>
 
